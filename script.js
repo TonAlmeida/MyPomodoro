@@ -10,6 +10,14 @@ document.getElementById(`play`).addEventListener(`click`, play);
 document.getElementById(`ico-reset`).addEventListener(`click`, e => {
     window.location.reload();
 });
+document.getElementById(`ico-plus`).addEventListener(`click`, e => {
+    minutes++;
+    inCommon.reload(minutes, seconds);
+});
+document.getElementById(`cover`).addEventListener(`click`, e => {
+    const result = window.confirm(`you time is still running`)
+    if(result === true)window.location.reload();
+});
 
 
 const inCommon = {
@@ -18,7 +26,7 @@ const inCommon = {
         let formatMinuts = (`0` + min).slice(-2);
         document.querySelector(`.timer.title`).innerHTML = `${formatMinuts}:${formatSeconds}`;
     },
-    resetSecection: () => {
+    resetSelected: () => {
         document.getElementById(`pomodoro`).classList.remove(`span-selected`);
         document.getElementById(`short`).classList.remove(`span-selected`);
         document.getElementById(`long`).classList.remove(`span-selected`);
@@ -33,11 +41,6 @@ const inCommon = {
         document.getElementById(`pause`).addEventListener(`click`, pause);//pause
 
         runSeconds = setInterval(decressingSeconds, 1000);
-
-        function decressingMinutes() {
-            minutes--;
-            inCommon.reload(minutes, seconds);
-        }
 
         function decressingSeconds() {
             seconds--;
@@ -82,7 +85,7 @@ const inCommon = {
 function pomodoro() {
     let minutesPmomodoro = 25;
     inCommon.reload(minutesPmomodoro);
-    inCommon.resetSecection();
+    inCommon.resetSelected();
     document.getElementById(`pomodoro`).classList.add(`span-selected`);
 
     window.location.reload()
@@ -92,7 +95,7 @@ function pomodoro() {
 function shortBreak() {
     let minutesShort = 1;
     inCommon.reload(minutesShort);
-    inCommon.resetSecection();
+    inCommon.resetSelected();
     document.getElementById(`short`).classList.add(`span-selected`);
 
     minutes = minutesShort;
@@ -101,15 +104,15 @@ function shortBreak() {
 function longBreak() {
     let minutesLong = 15;
     inCommon.reload(minutesLong);
-    inCommon.resetSecection();
+    inCommon.resetSelected();
     document.getElementById(`long`).classList.add(`span-selected`);
 
     minutes = minutesLong;
 }
 
 function play() {//here play
-    if(minutes <= 0)return ;
-    if((minutes == 25 || minutes == 15 || minutes == 1) && seconds === 0)inCommon.anyLess();
+    if(minutes < 0)return ;
+    if(seconds === 0)inCommon.anyLess();
     inCommon.decressing();
     inCommon.hideClickPlay();
     inCommon.coverRemoveHide();

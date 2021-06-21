@@ -29,6 +29,9 @@ header{
 .hide{
     display: none;
 }
+.red{
+    border: 1px solid red;
+}
 
 /*-------------------------------CONTAINER*/
 .container{
@@ -66,14 +69,15 @@ header{
     z-index: 1;
 }
 .span-container{
-    /* background: rgb(208, 248, 244); */
     width: 50%;
     height: 90px;
 
     border-radius: 15px;
     position: absolute;
-    top: 60px;
+    top: calc(50% - 225px);
     left: calc(50% - 25%);
+
+    transition: 1s;
 }
 
 span{
@@ -128,27 +132,40 @@ span:hover{
     font-size: 1.5rem;
 }
 /*---------------------------------ICONS*/
-#ico-reset{
+.ico{
     color: var(--lessBlue);
     border-radius: 50%;
     font-size: 20px;
 
     padding: 3px;
     position: absolute;
-    right: 25px;
     bottom: 20px;
 
     cursor: pointer;
     transition: 500ms;
 }
+#ico-reset{
+    right: 25px;
+}
 #ico-reset:hover{
     color: var(--pink);
 }
-@media (max-width: 500px) {
+#ico-plus{
+    left: 25px;
+    right: 258px;
+}
+#ico-plus:hover{
+    color: green;
+}
+
+/*----------------------------------MEDIA*/
+@media (max-width: 875px) {
     .span-container{
         width: 95%;
         left: calc(50% - 47.5%)
     }
+}
+@media (max-width: 500px) {
     span{
         width: 6rem;
         margin: 0;

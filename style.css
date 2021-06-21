@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --grey: #DDDDDD;
+    --blue: #1A1A2E;
+    --lessBlue: #16213E;
+    --orange: #F5A962;
+    --pink: #E94560;
+}
+body{
+    height: 100vh;
+    padding: 15px;
+    background: var(--blue);
+}
+header{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.hide{
+    display: none;
+}
+
+/*-------------------------------CONTAINER*/
+.container{
+    height: 100%;
+    width: 100%;
+    background: white;
+
+    border-radius: 15px;
+    position: relative;
+}
+.container-clock{
+    padding: 30px;
+    background: var(--grey);
+
+    border-radius: 25px;
+    position: relative;
+}
+/*---------------------------------TITLES*/
+.title{
+    font-size: 4rem;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: 400;
+
+    color: white;
+}
+.title-pomodoro{
+    font-size: 30px;
+    color: var(--pink);
+    font-weight: 800;
+}
+
+/*-------------------------------SPAN*/
+#cover{
+    cursor: not-allowed;
+    z-index: 1;
+}
+.span-container{
+    /* background: rgb(208, 248, 244); */
+    width: 50%;
+    height: 90px;
+
+    border-radius: 15px;
+    position: absolute;
+    top: 60px;
+    left: calc(50% - 25%);
+}
+
+span{
+    width: 7.8rem;
+    height: 30px;
+    padding: .1rem;
+    margin: .5rem;
+    text-align: center;
+
+    border-radius: 15px 15px 0 0;
+    cursor: pointer;
+}
+
+span:hover{
+    background: rgba(184, 221, 248, 0.1);
+}
+
+.span-selected{/*selected with javaScript*/
+    border-bottom: 1px solid var(--blue);
+    font-weight: 800;
+}
+
+.span-text{
+    color: var(--lessBlue);
+    font-size: 1rem;
+}
+
+/*---------------------------------CLOCK*/
+.clock{
+    background: var(--lessBlue);
+    height: 250px;
+    width: 250px;
+
+    border-radius: 50%;
+}
+.btn{
+    position: absolute;
+    top: calc(50% + 50px);
+
+    width: 150px;
+    padding: 10px;
+    border-radius: 25px;
+
+    cursor: pointer;
+    transition: 500ms;
+}
+.btn:hover{
+    background: rgba(255, 255, 255, .2);
+    font-weight: bold;
+}
+.btn.title{
+    font-size: 1.5rem;
+}
+/*---------------------------------ICONS*/
+#ico-reset{
+    color: var(--lessBlue);
+    border-radius: 50%;
+    font-size: 20px;
+
+    padding: 3px;
+    position: absolute;
+    right: 25px;
+    bottom: 20px;
+
+    cursor: pointer;
+    transition: 500ms;
+}
+#ico-reset:hover{
+    color: var(--pink);
+}
+@media (max-width: 500px) {
+    .span-container{
+        width: 95%;
+        left: calc(50% - 47.5%)
+    }
+    span{
+        width: 6rem;
+        margin: 0;
+    }
+    .span-text{
+        font-size: .8rem;
+    }
+}

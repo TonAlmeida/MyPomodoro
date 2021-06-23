@@ -15,25 +15,32 @@
 
     <!--my script-->
     <script defer src="./script.js"></script>
+
     <title>FunctionalPomodoro</title>
 </head>
 
 <body>
     <div class="container flex-center">
         <header>
+            <!--title-->
             <h1 class="title-pomodoro title">Pomodoro <i id="pomodoro-icon" class="fas fa-book-open"></i></h1>
+
+            <!--menu-->
+            <i class="ico-menu fas fa-bars"></i>
         </header>
 
+        <!--cover span box-->
+        <div id="cover" class="hide span-container flex-center"></div>
+
         <!--span box-->
-        <div id="cover" class="span-container flex-center hide"></div>
-        <div class="span-container flex-center">
+        <div id="set-timer" class=" span-container flex-center">
             <span id="pomodoro" class="span-selected span-text title">Pomodoro</span>
             <span id="short" class="span-text title">Short Break</span>
             <span id="long" class="span-text title">Long Break</span>
         </div>
 
         <!--clock box-->
-        <div class="container-clock flex-center">
+        <main id="clock-box" class="sub-container flex-center">
             <div class="clock flex-center">
 
                 <!--timer-->
@@ -47,6 +54,48 @@
             <!--icons-->
             <div id="ico-reset" class="ico"><i class="fas fa-undo-alt"></i></div>
             <div id="ico-plus" class="ico"><i class="fas fa-plus"></i></i></div>
+        </main>
+
+        <!--color box-->
+        <div id="colors" class="check-box flex-center">
+            <span><div class="check"></div></span>
+            <span><div class="check"></div></span>
+            <span><div class="check"></div></span>
+            <span><div class="check"></div></span>
+        </div>
+
+        <!--explanation-->
+        <div id="explanation-container" class="sub-container">
+            <p>Developed in the late 1980s, the technique bears its name because its creator, Italian Francesco Cirillo, used a chronometer shaped like a pomodoro (tomato in Italian) to manage his time.</p>
+
+            <p>Cirillo, who at the time wanted to optimize his studies and increase his productivity in his university studies, based himself on the idea that workflows divided into blocks can improve brain agility and stimulate focus. After much research, Cirillo came up with the 25-minute period as the ideal time for these blocks of temp.</p>
+                
+            <p>And, thus, one of the techniques was created that, since then, has helped people and work teams to remain focused on their daily activities, thus improving their productive performance.</p>
+
+            <h3>The technique is simple:</h3>
+            <ul>
+                <li>
+                    Make a list of tasks that are pending;
+                </li>
+                <li>
+                    Set a timer for 25 minutes (it's worth using the cellphone timer, it doesn't have to be this tomato-shaped timer);
+                </li>
+                <li>
+                    Choose one of the tasks and work on it without interruption (for example, it's not worth going to Facebook or WhatsApp);
+                </li>
+                <li>
+                    Work on the chosen task until the alarm goes off. If any major distractions arise, write them down and immediately focus back on the task;
+                </li>
+                <li>
+                    When the alarm goes off, take a break for 5 minutes (the best suggestion is that you get up and do some exercise, such as walking or stretching, but anything else that helps you relax is worth it);
+                </li>
+                <li>
+                    Resume work after the break for another “pomodoro” (25 minutes);
+                </li>
+                <li>
+                    Every four “pomodoros”, take a longer break: 15 minutes before returning to work;
+                </li>
+            </ul>
         </div>
     </div>
 </body>

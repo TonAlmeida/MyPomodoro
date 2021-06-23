@@ -19,6 +19,8 @@ header{
     position: absolute;
     top: 20px;
     left: 20px;
+
+    width: 97%;
 }
 .flex-center{
     display: flex;
@@ -32,23 +34,26 @@ header{
 .red{
     border: 1px solid red;
 }
-
-/*-------------------------------CONTAINER*/
 .container{
-    height: 100%;
+    height: auto;
     width: 100%;
+    padding: 3.5rem;
     background: white;
 
     border-radius: 15px;
     position: relative;
+
+    flex-direction: column;
 }
-.container-clock{
-    padding: 30px;
+.sub-container{
+    width: 350px;
+    padding: 1rem;
     background: var(--grey);
 
     border-radius: 25px;
     position: relative;
 }
+
 /*---------------------------------TITLES*/
 .title{
     font-size: 4rem;
@@ -64,45 +69,36 @@ header{
 }
 
 /*-------------------------------SPAN*/
-#cover{
-    cursor: not-allowed;
-    z-index: 1;
-}
-.span-container{
-    width: 50%;
-    height: 90px;
+.span-container, .check-box, #cover{
+    width: 40%;
+    min-width: 300px;
+    height: 50px;
 
     border-radius: 15px;
-    position: absolute;
     top: calc(50% - 225px);
-    left: calc(50% - 25%);
+    left: calc(50% - 20%);
 
-    transition: 1s;
+    justify-content: space-evenly;
 }
-
-span{
-    width: 7.8rem;
-    height: 30px;
-    padding: .1rem;
-    margin: .5rem;
-    text-align: center;
-
-    border-radius: 15px 15px 0 0;
-    cursor: pointer;
+#cover{
+    position: absolute;
+    top: 10vh;
 }
-
+#colors{
+    margin-bottom: 5rem;
+}
 span:hover{
     background: rgba(184, 221, 248, 0.1);
 }
-
 .span-selected{/*selected with javaScript*/
     border-bottom: 1px solid var(--blue);
     font-weight: 800;
 }
-
 .span-text{
     color: var(--lessBlue);
     font-size: 1rem;
+
+    cursor: pointer;
 }
 
 /*---------------------------------CLOCK*/
@@ -126,10 +122,12 @@ span:hover{
 }
 .btn:hover{
     background: rgba(255, 255, 255, .2);
-    font-weight: bold;
 }
 .btn.title{
     font-size: 1.5rem;
+}
+#timer{
+   cursor: default;
 }
 /*---------------------------------ICONS*/
 .ico{
@@ -157,20 +155,77 @@ span:hover{
 #ico-plus:hover{
     color: green;
 }
+.ico-menu{
+    position: absolute;
+    top: 0;
+    right: 15px;
+
+    font-size: 1.7rem;
+}
+
+/*----------------------------------TEXTT*/
+#explanation-container{
+    width: 65%;
+    height: auto;
+    margin-bottom: 5rem;
+
+    background: white;
+    border: 2px solid var(--pink);
+}
+#explanation-container p, h3, ul{
+    font-family: 'MV Boli', sans-serif;
+    text-align: justify;
+    margin: 1rem;
+    font-size: 1.2rem;
+    color: var(--lessBlue);
+    font-weight: 800;
+}
+ul{
+    width: 80%;
+    margin-left: 13%;
+}
+
+/*----------------------------------CHECK*/
+#check-box span{
+    margin: 0 auto;
+}
+.check{
+    width: 15px;
+    height: 15px;
+
+    border: 1px solid var(--blue);
+    border-radius: 50%;
+}
 
 /*----------------------------------MEDIA*/
-@media (max-width: 875px) {
-    .span-container{
-        width: 95%;
-        left: calc(50% - 47.5%)
+@media (max-width: 868px) {
+    header{
+        width: 90%;
     }
-}
-@media (max-width: 500px) {
-    span{
-        width: 6rem;
-        margin: 0;
+    #cover {
+        top: 10px;
+        left: calc(50% - 160px);
+    }
+    .container{
+        padding: .5rem;
+    }
+    .sub-container{
+        max-width: 80vw;
+    }
+    .span-container{
+        width: 20px;
+        margin-top: 2rem;
     }
     .span-text{
         font-size: .8rem;
+    }
+    #explanation-container{
+        width: 90vw;
+    }
+    .explanation-container{
+        align-items: left;
+    }
+    .title-pomodoro{
+        font-size: 1.5rem;
     }
 }

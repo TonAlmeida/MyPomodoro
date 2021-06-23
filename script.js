@@ -93,7 +93,7 @@ function pomodoro() {
 }
 
 function shortBreak() {
-    let minutesShort = 1;
+    let minutesShort = 5;
     inCommon.reload(minutesShort);
     inCommon.resetSelected();
     document.getElementById(`short`).classList.add(`span-selected`);

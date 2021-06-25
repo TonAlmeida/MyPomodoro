@@ -7,8 +7,10 @@
     --grey: #DDDDDD;
     --blue: #1A1A2E;
     --lessBlue: #16213E;
-    --orange: #F5A962;
     --pink: #E94560;
+    /* --grey: rgb(4, 4, 95);
+    --pink: rgb(4, 4, 95); */
+
 }
 body{
     height: 100vh;
@@ -16,10 +18,8 @@ body{
     background: var(--blue);
 }
 header{
-    position: absolute;
-    top: 20px;
-    left: 20px;
-
+    position: relative;
+    margin-bottom: 2rem;
     width: 97%;
 }
 .flex-center{
@@ -37,7 +37,7 @@ header{
 .container{
     height: auto;
     width: 100%;
-    padding: 3.5rem;
+    padding: 1rem;
     background: white;
 
     border-radius: 15px;
@@ -52,6 +52,10 @@ header{
 
     border-radius: 25px;
     position: relative;
+}
+.fill{
+    background: var(--blue);
+    border: 0;
 }
 
 /*---------------------------------TITLES*/
@@ -75,14 +79,11 @@ header{
     height: 50px;
 
     border-radius: 15px;
-    top: calc(50% - 225px);
-    left: calc(50% - 20%);
-
     justify-content: space-evenly;
 }
 #cover{
     position: absolute;
-    top: 10vh;
+    top: 11vh;
 }
 #colors{
     margin-bottom: 5rem;
@@ -118,7 +119,6 @@ span:hover{
     border-radius: 25px;
 
     cursor: pointer;
-    transition: 500ms;
 }
 .btn:hover{
     background: rgba(255, 255, 255, .2);
@@ -158,9 +158,8 @@ span:hover{
 .ico-menu{
     position: absolute;
     top: 0;
-    right: 15px;
-
-    font-size: 1.7rem;
+    right: 0;
+    font-size: 1.8rem;
 }
 
 /*----------------------------------TEXTT*/
@@ -168,6 +167,7 @@ span:hover{
     width: 65%;
     height: auto;
     margin-bottom: 5rem;
+    padding: 0;
 
     background: white;
     border: 2px solid var(--pink);
@@ -175,7 +175,7 @@ span:hover{
 #explanation-container p, h3, ul{
     font-family: 'MV Boli', sans-serif;
     text-align: justify;
-    margin: 1rem;
+    margin: .6rem;
     font-size: 1.2rem;
     color: var(--lessBlue);
     font-weight: 800;
@@ -190,11 +190,110 @@ ul{
     margin: 0 auto;
 }
 .check{
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
 
     border: 1px solid var(--blue);
     border-radius: 50%;
+}
+
+/*----------------------------------MENU*/
+.shadow-menu{
+    position: fixed;
+    top: 0;
+
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .8);
+
+    z-index: 10;
+}
+.menu{
+    position: fixed;
+    top: 13vh;
+    left: 100%;
+    height: 70vh;
+    width: 80vw;
+    transition: 500ms;
+    
+    background: white;
+    border-radius: .5rem;
+    z-index: 11;
+
+    display: grid;
+    grid-template-rows: 15% 30% 27.5% 27.5%;
+}
+/*----------------------------------------------------CONTENT MENU*/
+.menu-context{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+
+    font-size: 1.5rem;
+}
+.menu-context i{
+    margin: 10px;
+    cursor: pointer;
+}
+.set-time{
+    display: grid;
+    padding: 10px;
+
+    font-family: 'MV Boli', sans-serif;
+    font-size: .8rem;
+
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+.input-box{
+    display: inline-flex;
+}
+.input-box input{
+    width: 80%;
+    height: 40%;
+    margin: 0 10px;
+}
+.label-input-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:rgba(0, 0, 0, .5);
+}
+.font, .color{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+.samples{
+    width: 50%;
+    height: 40px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#red,#blue,#black,#A,#B,#C{
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+}
+#red{
+    background: red;
+}
+#blue{
+    background: blue;
+}
+#black{
+    background: black;
+}
+.btn.btn-menu{
+    font-family: 'MV Boli', sans-serif;
+    font-size: 1rem;
+
+    position: absolute;
+    top: 96%;
+    left: calc(50% - 75px)
 }
 
 /*----------------------------------MEDIA*/
@@ -203,8 +302,8 @@ ul{
         width: 90%;
     }
     #cover {
-        top: 10px;
-        left: calc(50% - 160px);
+        top: 11vh;
+        left: calc(50% - 150px);
     }
     .container{
         padding: .5rem;
@@ -214,7 +313,7 @@ ul{
     }
     .span-container{
         width: 20px;
-        margin-top: 2rem;
+        margin-top: 3.5rem;
     }
     .span-text{
         font-size: .8rem;

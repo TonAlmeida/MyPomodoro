@@ -13,19 +13,76 @@
     <!--my style-->
     <link rel="stylesheet" href="./style.css" />
 
-    <!--my script-->
-    <script defer src="./script.js"></script>
+    <!--timer script-->
+    <script defer src="./timer.js"></script>
+
+    <!--menu script-->
+    <script defer src="./menu.js"></script>
 
     <title>FunctionalPomodoro</title>
 </head>
 
 <body>
     <div class="container flex-center">
+
+        <!--shadow background-->
+        <div class="hide shadow-menu"></div>
+
+        <!--menu-->
+        <div class="menu">
+  
+        <!--button-->
+        <button class="btn btn-menu">Apply</button>
+
+            <div class="menu-context">
+                <h3>Settings</h3>
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="set-time">
+                <p>TIME (MINUTES)</p>
+
+                <div class="input-box">
+                    <div class="label-input-box">
+                        <label for="pomodoro-setNumber" value="25">Pomodoro</label>
+                        <input type="number" id="pomodoro-setNumber" />
+                    </div>
+                    <div class="label-input-box">
+                        <label for="break-setNumber" value="5">Short Break</label>
+                        <input type="number" id="break-setNumber" />
+                    </div>
+                    <div class="label-input-box">
+                        <label for="long-setNumber" value="15">Long Break</label>
+                        <input type="number" id="long-setNumber" />
+                    </div>
+                </div>
+            </div>
+            <div class="font">
+                <div>
+                    <p>FONT</p>
+                </div>
+                <div class="samples">
+                    <div id="A">Aa</div>
+                    <div id="B">Aa</div>
+                    <div id="C">Aa</div>
+                </div>
+            </div>
+            <div class="color">
+                <div>
+                    <p>COLOR</p>
+                </div>
+                <div class="samples">
+                    <div id="red"></div>
+                    <div id="blue"></div>
+                    <div id="black"></div>
+                </div>
+            </div>
+        </div>
+
         <header>
             <!--title-->
             <h1 class="title-pomodoro title">Pomodoro <i id="pomodoro-icon" class="fas fa-book-open"></i></h1>
 
-            <!--menu-->
+            <!--icon menu-->
             <i class="ico-menu fas fa-bars"></i>
         </header>
 
@@ -58,45 +115,69 @@
 
         <!--color box-->
         <div id="colors" class="check-box flex-center">
-            <span><div class="check"></div></span>
-            <span><div class="check"></div></span>
-            <span><div class="check"></div></span>
-            <span><div class="check"></div></span>
+            <span>
+                <div class="fill check"></div>
+            </span>
+            <span>
+                <div class="check"></div>
+            </span>
+            <span>
+                <div class="check"></div>
+            </span>
+            <span>
+                <div class="check"></div>
+            </span>
+            <span></span>
+            <span>
+                <div class="check"></div>
+            </span>
+            <span>
+                <div class="check"></div>
+            </span>
+            <span>
+                <div class="check"></div>
+            </span>
+            <span>
+                <div class="check"></div>
+            </span>
         </div>
 
         <!--explanation-->
         <div id="explanation-container" class="sub-container">
-            <p>Developed in the late 1980s, the technique bears its name because its creator, Italian Francesco Cirillo, used a chronometer shaped like a pomodoro (tomato in Italian) to manage his time.</p>
-
-            <p>Cirillo, who at the time wanted to optimize his studies and increase his productivity in his university studies, based himself on the idea that workflows divided into blocks can improve brain agility and stimulate focus. After much research, Cirillo came up with the 25-minute period as the ideal time for these blocks of temp.</p>
-                
-            <p>And, thus, one of the techniques was created that, since then, has helped people and work teams to remain focused on their daily activities, thus improving their productive performance.</p>
+            <p>The pomodoro technique was developed by Italian Francesco Cirillo to improve productivity in his university
+                studies, based himself on the idea that workflows divided into blocks can improve brain agility and
+                stimulate focus. After much research, Cirillo came up with the 25 minutes period as the ideal time for
+                these blocks of temp. Since then, has helped people and work teams to remain focused on their daily
+                activities, thus improving their productive performance.</p>
 
             <h3>The technique is simple:</h3>
             <ul>
                 <li>
-                    Make a list of tasks that are pending;
+                    Make a list of tasks that are pending.
                 </li>
                 <li>
-                    Set a timer for 25 minutes (it's worth using the cellphone timer, it doesn't have to be this tomato-shaped timer);
+                    Set a timer for 25 minutes.
                 </li>
                 <li>
-                    Choose one of the tasks and work on it without interruption (for example, it's not worth going to Facebook or WhatsApp);
+                    Choose one of the tasks and work on it without interruption.
                 </li>
                 <li>
-                    Work on the chosen task until the alarm goes off. If any major distractions arise, write them down and immediately focus back on the task;
+                    Work on the chosen task until the alarm goes off.
                 </li>
                 <li>
-                    When the alarm goes off, take a break for 5 minutes (the best suggestion is that you get up and do some exercise, such as walking or stretching, but anything else that helps you relax is worth it);
+                    take a break for 5 minutes(relax).
                 </li>
                 <li>
-                    Resume work after the break for another “pomodoro” (25 minutes);
+                    Resume work after the break for another “pomodoro”(25 minutes).
                 </li>
                 <li>
-                    Every four “pomodoros”, take a longer break: 15 minutes before returning to work;
+                    Every four “pomodoros”, take a longer break: 15 minutes before returning to work.
                 </li>
             </ul>
         </div>
+        <footer>
+            <p>made by Ton.Almeida &copy;</p>
+        </footer>
     </div>
 </body>
 
